@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "204830003681",
+    "firebase_url": "https://testproject-328af.firebaseio.com",
+    "project_id": "testproject-328af",
+    "storage_bucket": "testproject-328af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204830003681:android:15a2be7a11f27366",
+        "android_client_info": {
+          "package_name": "com.example.android.rhoe_app_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204830003681-ondne3kkjvovub26uqfijrvoh0t65jhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhFbpgS8N59d273RhCl4rmh5VJpbATTW8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
