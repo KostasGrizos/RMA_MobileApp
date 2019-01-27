@@ -32,7 +32,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.20"
         android:paddingTop="40dp"
-        android:text="-"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="30sp"
@@ -43,7 +42,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.15"
-        android:text="-"
         android:textAlignment="center"
         android:textSize="18sp" />
 
@@ -62,7 +60,7 @@
             android:layout_weight="0.5"
             android:background="@drawable/button_background"
             android:backgroundTint="@color/colorAccent1"
-            android:text="ΑΚΥΡΩΣΗ" />
+            android:text="ΠΑΡΑΚΑΜΨΗ" />
 
         <Button
             android:id="@+id/btnTakePhoto"

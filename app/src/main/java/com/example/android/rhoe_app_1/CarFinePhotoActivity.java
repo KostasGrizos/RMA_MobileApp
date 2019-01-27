@@ -175,7 +175,10 @@ public class CarFinePhotoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cameraOn) {
-                    Intent intent = new Intent(CarFinePhotoActivity.this, DashboardActivity.class);
+                    Bundle conOCR = new Bundle();
+                    conOCR.putBoolean("ConditionOCR", true);
+                    Intent intent = new Intent(CarFinePhotoActivity.this, FineCompleteActivity.class);
+                    intent.putExtras(conOCR);
                     startActivity(intent);
                 } else {
                     try {
@@ -189,7 +192,7 @@ public class CarFinePhotoActivity extends AppCompatActivity {
                         cameraSource.start(cameraView.getHolder());
                         cameraOn = true;
                         TakePhotoButton.setText("ΛΗΨΗ");
-                        CancelPhotoButton.setText("ΑΚΥΡΩΣΗ");
+                        CancelPhotoButton.setText("ΠΑΡΑΚΑΜΨΗ");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

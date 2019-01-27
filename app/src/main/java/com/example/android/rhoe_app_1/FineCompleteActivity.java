@@ -25,6 +25,7 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -119,6 +120,25 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
     //Tables
     private String[] FineBasic = new String[10];
     private String[] A = new String[6], B = new String[6], C = new String[6], D = new String[6];
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            onBackPressed();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent intent = new Intent(FineCompleteActivity.this, DashboardActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onResume() {
