@@ -127,7 +127,7 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
 
             return;
         }
-        locationManager.requestLocationUpdates(provider, 1000, 0, this);
+        locationManager.requestLocationUpdates(provider, 10000, 5, this);
     }
 
     @Override
@@ -561,7 +561,7 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
         }
         else{
             //This is what you need:
-            locationManager.requestLocationUpdates(provider, 1000, 0, this);
+            locationManager.requestLocationUpdates(provider, 10000, 5, this);
         }
 
     }
@@ -643,8 +643,8 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
                     (FineBasic[9].length() != 0) &&
                     (FineBasic[10].length() != 0) &&
                     (FineBasic[11].length() != 0) &&
-                    //(latF != 0) &&
-                    //(lonF != 0) &&
+                    (latF != 0) &&
+                    (lonF != 0) &&
                     DateFirebase != null)
             {
 
@@ -764,7 +764,7 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
 
     private void getLocation() {
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        provider = locationManager.getBestProvider(new Criteria(), false);
+        provider = locationManager.getBestProvider(new Criteria(), true);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
@@ -809,7 +809,8 @@ public class FineCompleteActivity extends AppCompatActivity implements LocationL
                 String response;
                 HttpDataHandler http = new HttpDataHandler();
                 //String url = String.format("https://maps.googleapis.com/maps/api/geocode/json?latlng=%.4f,%.4f&sensor=false&language=el",lat,lng);
-                String url = String.format("https://maps.googleapis.com/maps/api/geocode/json?latlng=%.4f,%.4f&sensor=false",lat,lng);
+                String url = String.format("https://maps.googleapis.com/maps/api/geocode/json?latlng=%.4f,%.4f&sensor=false&language=el&key=AIzaSyCrb-EOSI56Gtyfp9RT5gemCbmQP_YOLWw",lat,lng);
+                //String url = String.format("https://maps.googleapis.com/maps/api/geocode/json?latlng=%.4f,%.4f&sensor=false",lat,lng);
                 response = http.GetHTTPData(url);
                 return response;
             }
