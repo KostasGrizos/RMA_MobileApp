@@ -17,6 +17,9 @@
         android:name="android.hardware.usb.host"
         android:required="false" />
     <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:name="com.example.android.rhoe_app_1.Rhoe_Municipal_Assistant"
